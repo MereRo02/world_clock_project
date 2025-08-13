@@ -35,9 +35,11 @@ select {
 
 .city {
   display: flex;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
   padding: 5px 0;
   font-size: 13px;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  
 }
 .city:last-child {
   border: none;
@@ -45,17 +47,20 @@ select {
 
 .time {
     font-size: 14px;
+    display: inline-flex;
     font-weight: bold;
+    gap: 4px;
 }
 .time small {
     font-size: 10px;
-      line-height: 10px;
+      line-height: 20px;
+      vertical-align: middle;
 }
   .date {   
     opacity: 0.7;
-    margin-top: 5px;
-    width: 100%;
-}
+    margin-top: 15px;
+   font-size: 10px;
+  }
 
 .city,
 .date,
@@ -71,5 +76,5 @@ text-align: center;
 }
 
 a {
-    color: rgb(245, 54, 245);
+    color: rgb(226, 86, 156);
 }
