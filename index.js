@@ -23,5 +23,23 @@ let londonTimeElement = londonElement.querySelector(".time");
 	joburgDateElement.innerHTML = joburgTime.format("MMMM Do YYYY");
 	joburgTimeElement.innerHTML = joburgTime.format("h:mm:ss [<small>]A[</small>]");
 }
+function updateCities(event) {
+	let citiesTimeZone = event.target.value;
+	let citiesName = cityTimeZone.replace("_", " ").split("/");
+  let citiesTime = moment.tz(citiesTimeZone);
+	let citiesElement = document.querySelector("#cities");
+   citiesElement.innerHTML = `
+	 	<div class="cities">
+		<div>
+		<h2>${citiesName}</h2>
+		<div class="date">${citiesTime.format("MMMM Do YYYY")}</div>
+		</div>
+		<div class="time">${citiesTime.format("h:mm:ss")}<small>${cityTime.format("A")}</small></div>
+</div>`;
+}
+
 updateTime();
 setInterval(updateTime, 1000);
+
+let citiesSelectElement = document.querySelector("#cities");
+citiesSelectElement.addEventListener("change", updateCities);
