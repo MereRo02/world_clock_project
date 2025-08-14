@@ -34,7 +34,6 @@ select {
 }
 
 .city {
-  display:none;
   padding: 5px 0;
   font-size: 13px;
   justify-content: space-between;
@@ -44,12 +43,15 @@ select {
 .city:last-child {
   border: none;
 }
-
+.city .selected {
+  display: flex;
+   gap: 10px;
+}
 .time {
     font-size: 14px;
     display: inline-flex;
     font-weight: bold;
-    gap: 4px;
+    gap: 5px;
 }
 .time small {
     font-size: 10px;
@@ -58,14 +60,13 @@ select {
 }
   .date {   
     opacity: 0.7;
-    
+  
   }
 
-.city,
-.date,
-.time {
-text-align: center;
-;
+.selected {
+    display: flex;
+    align-items: center;
+    line-height: 3;
 }
   footer {
   text-align: center;
